@@ -1,0 +1,49 @@
+name: teesco
+description: Volunteer Management Application from Entrepreneurship Cell, NIT Raipur
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Logging library
+  logger: ^0.8.3
+  # Http Client generator
+  chopper: ^3.0.2
+  # Annotation for [freezed] code generator
+  freezed_annotation: ^0.7.1
+  # Service Locator (DI)
+  get_it: ^4.0.1
+  # BLoC (Business Logic Component) for Flutter State Management
+  flutter_bloc: ^3.2.0
+  # Functional Programming
+  dartz: ^0.8.9
+  # Socket based data connection checker {beta}
+  data_connection_checker: ^0.3.4
+  # Local Cache Management
+  shared_preferences: ^0.5.6+3
+  # Common Fonts
+  google_fonts: ^0.5.0+1
+
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^1.8.1
+  # Code generator for [chopper] library
+  chopper_generator: ^3.0.4
+  # Code generator for Data Classes & Equality Operator
+  freezed: ^0.10.6
+  # Mock framework
+  mockito: ^4.1.1
+
+flutter:
+  uses-material-design: true
+
+  assets: 
+    - assets/images/
