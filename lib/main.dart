@@ -1,10 +1,14 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
 
 import 'core/res/strings.dart';
 import 'injection_container.dart';
+import 'package:teesco/features/auth/signup/sign_up_screen.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await init();
 
