@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
+import 'package:teesco/features/fogetPasswordScreen.dart';
 
 import 'core/res/strings.dart';
+import 'features/otpScreen.dart';
 import 'injection_container.dart';
 
 void main() async {
@@ -24,14 +26,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
+      home:forgetOtpScreen(), /*Scaffold(
         appBar: AppBar(
           title: Text(Strings.app_name),
         ),
         body: Center(
           child: Text('Welcome to Teesco Application!'),
         ),
-      ),
+      ),*/
     );
   }
 }
