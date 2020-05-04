@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/features/auth/forgot%20password/otpScreen.dart';
+import 'package:teesco/features/auth/forgot%20password/screens/otpScreen.dart';
 
 
 class forgetOtpScreen extends StatelessWidget {

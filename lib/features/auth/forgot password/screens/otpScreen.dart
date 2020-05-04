@@ -3,7 +3,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:teesco/core/res/colors.dart' as color;
 
-import 'keyboardCommon.dart';
+import '../widgets/keyboardCommon.dart';
+import 'changePasswordScreen.dart';
 
 class otpScreen extends StatefulWidget {
   @override
@@ -371,6 +372,10 @@ class _otpScreenState extends State<otpScreen> {
   //MatchOTP
   void  matchOtp(){
 
+    Navigator.push(
+        context,new MaterialPageRoute(
+      builder: (context)=>changePassword(),
+    ));
   }
 
 
@@ -385,7 +390,13 @@ class _otpScreenState extends State<otpScreen> {
   //Master Controller
   TextEditingController otpEnteredController = TextEditingController();
 
+
   //Memory leaks prevention
+  /*
+  * After disposing if user navigates back this throws error
+  * as TextEditnigController cannot be used
+  *
+  * */
   @override
   void dispose() {
     super.dispose();
