@@ -28,6 +28,8 @@ dependencies:
   shared_preferences: ^0.5.6+3
   # Common Fonts
   google_fonts: ^0.5.0+1
+  # Toast
+  toast:
 
   cupertino_icons: ^0.1.2
 
