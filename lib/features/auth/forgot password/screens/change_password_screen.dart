@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/features/auth/forgot%20password/widgets/passwordBox.dart';
+import 'package:teesco/features/auth/forgot%20password/widgets/password_box.dart';
 
-class changePassword extends StatefulWidget {
+class ChangePassword extends StatefulWidget {
   @override
-  _changePasswordState createState() => _changePasswordState();
+  _ChangePasswordState createState() => _ChangePasswordState();
 }
 
-class _changePasswordState extends State<changePassword> {
+class _ChangePasswordState extends State<ChangePassword> {
 
   var boolShowPassword;
 
@@ -20,7 +20,7 @@ class _changePasswordState extends State<changePassword> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            passwordBox(
+            PasswordBox(
                 onPressedIcon:(){ setState(() {
                 boolShowPassword=true;
                 });},
@@ -30,7 +30,7 @@ class _changePasswordState extends State<changePassword> {
 
             Padding(padding: EdgeInsets.only(top: 10.0)),
 
-            passwordBox(
+            PasswordBox(
                 onPressedIcon: (){ setState(() {
                   showHide();
                 });},
@@ -48,7 +48,7 @@ class _changePasswordState extends State<changePassword> {
   @override
   void initState(){
     super.initState();
-    boolShowPassword=false;
+    boolShowPassword=true;
   }
 
   void showHide() {
@@ -57,7 +57,6 @@ class _changePasswordState extends State<changePassword> {
         boolShowPassword =false;
       });
     }else{
-
       boolShowPassword =true;
     }
   }

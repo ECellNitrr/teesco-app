@@ -12,6 +12,56 @@ import 'package:flutter/foundation.dart';
 *
 * */
 
+class PasswordBox extends StatefulWidget {
+
+  final GestureTapCallback onPressedIcon;
+  final TextEditingController controllerTEC;
+  final String labelPassword;
+  bool boolObscureText;
+
+  //Passing values to that class
+  PasswordBox({
+    Key key,
+    @required this.onPressedIcon,
+    @required this.controllerTEC,
+    @required this.labelPassword,
+    @required this.boolObscureText,
+  }):super(key:key);
+
+  @override
+  _PasswordBoxState createState() => _PasswordBoxState();
+}
+
+
+class _PasswordBoxState extends State<PasswordBox> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: <Widget>[
+          IconButton(icon: Icon(Icons.remove_red_eye),
+              onPressed:(){widget.onPressedIcon;
+              }),
+
+          SizedBox(
+            width: 3*MediaQuery.of(context).size.width/4,
+            child: TextField(
+              decoration: InputDecoration(
+                labelText: widget.labelPassword,
+              ),
+              controller: widget.controllerTEC,
+              keyboardType: TextInputType.text,
+              obscureText:widget.boolObscureText,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+/*
 class passwordBox extends StatelessWidget {
 
   final GestureTapCallback onPressedIcon;
@@ -49,4 +99,4 @@ class passwordBox extends StatelessWidget {
     );
   }
 
-}
+}*/

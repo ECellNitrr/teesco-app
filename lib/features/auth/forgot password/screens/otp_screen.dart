@@ -3,15 +3,15 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:teesco/core/res/colors.dart' as color;
 
-import '../widgets/keyboardCommon.dart';
-import 'changePasswordScreen.dart';
+import '../widgets/keyboard_common.dart';
+import 'change_password_screen.dart';
 
-class otpScreen extends StatefulWidget {
+class OtpScreen extends StatefulWidget {
   @override
-  _otpScreenState createState() => _otpScreenState();
+  _OtpScreenState createState() => _OtpScreenState();
 }
 
-class _otpScreenState extends State<otpScreen> {
+class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     //Here are the list of OTP boxes with there properties
@@ -374,7 +374,7 @@ class _otpScreenState extends State<otpScreen> {
 
     Navigator.push(
         context,new MaterialPageRoute(
-      builder: (context)=>changePassword(),
+      builder: (context)=>ChangePassword(),
     ));
   }
 

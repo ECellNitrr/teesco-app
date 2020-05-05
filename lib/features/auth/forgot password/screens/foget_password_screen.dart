@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/features/auth/forgot%20password/screens/otpScreen.dart';
+import 'package:teesco/features/auth/forgot%20password/screens/otp_screen.dart';
 
 
-class forgetOtpScreen extends StatelessWidget {
+class ForgetOTPScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return forgetScreen();
+    return ForgetScreen();
   }
 }
 
 
 
-class forgetScreen extends StatefulWidget {
+class ForgetScreen extends StatefulWidget {
   @override
-  _forgetScreenState createState() => _forgetScreenState();
+  _ForgetScreenState createState() => _ForgetScreenState();
 }
 
-class _forgetScreenState extends State<forgetScreen> {
+class _ForgetScreenState extends State<ForgetScreen> {
 
 
   @override
@@ -70,7 +70,7 @@ class _forgetScreenState extends State<forgetScreen> {
 
     Navigator.push(
         context,new MaterialPageRoute(
-        builder: (context)=>otpScreen(),
+        builder: (context)=>OtpScreen(),
     ));
 
 
