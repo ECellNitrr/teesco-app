@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teesco/features/Auth/login/data/models/user.dart';
-import 'package:teesco/features/Auth/login/presentation/widgets/loading_indicator.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

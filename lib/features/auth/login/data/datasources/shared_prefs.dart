@@ -1,38 +1,33 @@
 import 'package:shared_preferences/shared_preferences.dart';
-
-// This class contains the constants - Email id Key and Password key
-class Constant{
-final String key_Email="email";
-final String key_Password="password";
-}
+import 'package:teesco/core/res/strings.dart';
 
 // This class contains the code for saving and retrieval of email and password of current user
 class Preferences{
   Preferences(){}
 // To set the Emailid of the current logging in user
-  Future<bool> set_Email(String email) async{
+  Future<bool> setEmail(String email) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(Constant().key_Email, email);
+    prefs.setString(Strings.keyEmail, email);
     return true;
   }
 // To set the password of the current logging in user
-  Future<bool> set_Password(String password) async{
+  Future<bool> setPassword(String password) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(Constant().key_Password, password);
+    prefs.setString(Strings.keyPassword, password);
     return true;
   }
 // To get the email of the current logged in user
-  Future<String> get_Email() async{
+  Future<String> getEmail() async{
     String _email;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _email=prefs.getString(Constant().key_Email)??null;
+    _email=prefs.getString(Strings.keyEmail)??null;
     return _email;
   }
 // To get the password of the current logged in user
-  Future<String> get_Password() async{
+  Future<String> getPassword() async{
     String _password;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    _password=prefs.getString(Constant().key_Password)??null;
+    _password=prefs.getString(Strings.keyPassword)??null;
     return _password;
   }
 }
