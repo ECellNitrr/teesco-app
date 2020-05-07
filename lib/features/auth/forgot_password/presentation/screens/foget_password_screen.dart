@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/features/auth/forgot%20password/screens/otp_screen.dart';
+import 'package:teesco/features/auth/forgot_password/domain/entities/forgot_password.dart';
+import 'package:teesco/features/auth/forgot_password/presentation/screens/otp_screen.dart';
 
 
 class ForgetOTPScreen extends StatelessWidget {
@@ -65,6 +66,10 @@ class _ForgetScreenState extends State<ForgetScreen> {
   }
 
   _onPhoneEntered() {
+
+    //Shared Pref Store  Implementation and Otp genrate and
+
+
 
     //For Now just Navigates to other screen command is placed here
 

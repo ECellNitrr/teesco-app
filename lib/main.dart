@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
-import 'package:teesco/features/auth/forgot%20password/screens/foget_password_screen.dart';
-
+import 'package:teesco/features/auth/forgot_password/presentation/screens/foget_password_screen.dart';
 import 'core/res/strings.dart';
-import 'features/auth/forgot password/screens/change_password_screen.dart';
-import 'features/auth/forgot password/screens/otp_screen.dart';
+import 'features/auth/forgot_password/presentation/screens/change_password_screen.dart';
+import 'features/auth/forgot_password/presentation/screens/otp_screen.dart';
 import 'injection_container.dart';
 
 void main() async {

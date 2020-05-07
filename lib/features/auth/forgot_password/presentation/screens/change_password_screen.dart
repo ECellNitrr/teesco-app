@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/features/auth/forgot%20password/widgets/password_box.dart';
+import 'package:teesco/features/auth/forgot_password/presentation/widgets/password_box.dart';
 
 class ChangePassword extends StatefulWidget {
   @override
