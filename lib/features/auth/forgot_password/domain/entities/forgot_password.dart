@@ -15,7 +15,8 @@ abstract class getEmail with _$getEmail {
   const factory getEmail(String email,int otp) =Data;
   const factory getEmail.loading() = Loading;
 
-  // const factory getEmail.error([String message])=  ErrorDetails;
+
+  //const factory getEmail.error([String message])=  ErrorDetails;
   // Generating error  ErrorDetails
   // would be skipping that as no need seen basis here
   //Planning to handle it else where
