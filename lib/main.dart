@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
 import 'package:teesco/features/auth/forgot_password/presentation/screens/foget_password_screen.dart';
 import 'core/res/strings.dart';
@@ -18,6 +19,7 @@ void main() async {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,5 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-
   }
 }
