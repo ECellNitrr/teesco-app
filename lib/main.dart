@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
-
 import 'core/res/strings.dart';
 import 'injection_container.dart';
 

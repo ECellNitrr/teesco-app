@@ -9,7 +9,8 @@ class Strings {
   /// Shared Preferences Keys
   static const String keyEmail="email";
   static const String keyPassword="password";
-
+  /// API URL
+  static const String API_URL="";
   //! Add common strings here...
 
 }
