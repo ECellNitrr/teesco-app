@@ -13,7 +13,7 @@ dependencies:
   # Logging library
   logger: ^0.8.3
   # Http Client generator
-  chopper: ^3.0.2
+  http: ^0.12.1
   # Annotation for [freezed] code generator
   freezed_annotation: ^0.7.1
   # Service Locator (DI)
@@ -35,8 +35,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^1.8.1
-  # Code generator for [chopper] library
-  chopper_generator: ^3.0.4
   # Code generator for Data Classes & Equality Operator
   freezed: ^0.10.6
   # Mock framework
