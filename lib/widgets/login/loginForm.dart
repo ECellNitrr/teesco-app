@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:teesco/constants.dart';
 
 final _formKey = GlobalKey<FormState>();
 
@@ -58,8 +60,13 @@ class _LoginFormState extends State<LoginForm> {
         ));
   }
 
-  void _onLoginKeyPressed() {
+  void _onLoginKeyPressed() async {
     if (!_formKey.currentState.validate()) return;
+
+    Response res = await post(baseURL + 'users/login/',
+        body: {"email": "one@example.com", "password": "stringone"});
+
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text(res.body),));
   }
 
   void _togglePasswordVisibility() {
@@ -72,7 +79,7 @@ class _LoginFormState extends State<LoginForm> {
     RegExp emailRegx = new RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 
-    if (email.isEmpty || !emailRegx.hasMatch(email)){
+    if (email.isEmpty || !emailRegx.hasMatch(email)) {
       return "Please enter a valid email";
     }
     return null;
