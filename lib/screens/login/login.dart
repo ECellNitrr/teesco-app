@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:teesco/core/res/strings.dart';
+import 'package:teesco/injection_container.dart';
+import 'package:teesco/screens/home/home.dart';
 
 import '../../core/util/log_wrapper.dart';
 import 'bloc/login_bloc.dart';
@@ -14,12 +18,14 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SharedPreferences sharedPreferences = sl.get<SharedPreferences>();
     return Scaffold(
       body: BlocListener<LoginBloc, LoginState>(
-        listener: (context, state) {
+        listener: (context, state) async {
           if (state is LoginLoaded) {
-            // TODOredirect to homepage
             Log.i(tag: "Login", message: "User Logged In ${state.token}");
+            await sharedPreferences.setString(S.tokenKey, state.token);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
           } else if (state is LoginError) {
             Scaffold.of(context).showSnackBar(SnackBar(content: Text(state.message)));
           }
@@ -81,9 +87,15 @@ class LoginScreen extends StatelessWidget {
 
   Widget _buildSuccess(String token) {
     return Center(
-      child: Text(
-        "User Logged In! Token is:\n$token",
-        textAlign: TextAlign.center,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(Icons.check_circle_outline),
+          Text(
+            "User Login Successful!",
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }

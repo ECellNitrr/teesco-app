@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:teesco/core/res/errors.dart';
 import 'package:teesco/core/res/strings.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
+import 'package:teesco/injection_container.dart';
 import 'package:teesco/models/login.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +28,7 @@ class APILoginRepository implements LoginRepository {
   Future<String> login(LoginModel loginModel) async {
     http.Response response;
     try {
-      response = await http.post(
+      response = await sl.get<http.Client>().post(
         S.loginUrl,
         body: <String, dynamic>{
           S.emailKey: loginModel.email,
