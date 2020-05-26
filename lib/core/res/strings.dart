@@ -10,7 +10,7 @@ class S {
   //! Add common strings here...
 
   // urls
-  static const String url = "http://159.65.158.103:5555/";
+  static const String url = "http://159.65.158.103:5555/api/";
   static const String loginUrl = url + "users/login/";
 
   // api keys
