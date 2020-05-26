@@ -19,7 +19,9 @@ dependencies:
   # Service Locator (DI)
   get_it: ^4.0.1
   # BLoC (Business Logic Component) for Flutter State Management
-  flutter_bloc: ^3.2.0
+  flutter_bloc: ^4.0.0
+  # Equating two dart objects
+  equatable: ^1.1.1
   # Functional Programming
   dartz: ^0.8.9
   # Socket based data connection checker {beta}
@@ -43,5 +45,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  assets: 
+  assets:
     - assets/images/
