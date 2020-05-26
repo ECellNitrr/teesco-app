@@ -13,3 +13,9 @@ class Login extends LoginEvent {
   @override
   List<Object> get props => [email, password];
 }
+
+class FieldsUpdated extends LoginEvent {
+  const FieldsUpdated();
+  @override
+  List<Object> get props => [];
+}

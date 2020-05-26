@@ -35,6 +35,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       } on UnknownError {
         yield LoginError("Something went wrong!");
       }
+    } else if (event is FieldsUpdated) {
+      yield LoginInitial();
     }
   }
 }

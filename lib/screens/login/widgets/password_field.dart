@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teesco/screens/login/bloc/login_bloc.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField(this.controller);
@@ -33,6 +35,7 @@ class _PasswordFieldState extends State<PasswordField> {
           hintText: "p@ssw0rd",
           labelText: "Password",
         ),
+        onChanged: (_) => BlocProvider.of<LoginBloc>(context).add(FieldsUpdated()),
       ),
     );
   }

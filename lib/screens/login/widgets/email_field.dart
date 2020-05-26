@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teesco/screens/login/bloc/login_bloc.dart';
 
 class EmailField extends StatelessWidget {
   const EmailField(this.controller);
@@ -17,6 +19,7 @@ class EmailField extends StatelessWidget {
           hintText: "example@email.com",
           labelText: "Email",
         ),
+        onChanged: (_) => BlocProvider.of<LoginBloc>(context).add(FieldsUpdated()),
       ),
     );
   }

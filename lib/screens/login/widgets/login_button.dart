@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teesco/core/util/log_wrapper.dart';
 import 'package:teesco/screens/login/bloc/login_bloc.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({this.formKey, this.email, this.password});
-  final formKey;
+  final GlobalKey<FormState> formKey;
   final String email, password;
 
   @override
