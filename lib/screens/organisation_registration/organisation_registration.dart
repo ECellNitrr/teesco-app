@@ -27,12 +27,12 @@ class _OrganisationRegistrationScreenState
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
-          leading: GestureDetector(
-            child: Icon(
+          leading: IconButton(
+            icon: Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             ),
-            onTap: null,
+            onPressed: null,
           ),
           centerTitle: true,
           actions: <Widget>[
