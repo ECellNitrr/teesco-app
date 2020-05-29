@@ -19,23 +19,21 @@ class _ComnfirmPasswordFieldState extends State<ComnfirmPasswordField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TextFormField(
-        controller: widget.controller,
-        validator: _confirmPassword,
-        obscureText: !_passwordVisible,
-        decoration: InputDecoration(
-          prefixIcon: Icon(Icons.lock),
-          suffixIcon: IconButton(
-            icon: _passwordVisible
-                ? Icon(Icons.visibility)
-                : Icon(Icons.visibility_off),
-            onPressed: _togglePasswordVisibility,
-          ),
-          border: OutlineInputBorder(),
-          hintText: "p@ssw0rd",
-          labelText: "Confirm Password",
+    return TextFormField(
+      controller: widget.controller,
+      validator: _confirmPassword,
+      obscureText: !_passwordVisible,
+      decoration: InputDecoration(
+        prefixIcon: Icon(Icons.lock),
+        suffixIcon: IconButton(
+          icon: _passwordVisible
+              ? Icon(Icons.visibility)
+              : Icon(Icons.visibility_off),
+          onPressed: _togglePasswordVisibility,
         ),
+        border: OutlineInputBorder(),
+        hintText: "p@ssw0rd",
+        labelText: "Confirm Password",
       ),
     );
   }
