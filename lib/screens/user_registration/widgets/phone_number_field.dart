@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-///For Input of User Name
-class UserNameInput extends StatelessWidget {
+///For Input of Phone number
+class PhoneNumberField extends StatelessWidget {
   String labelName;
   TextEditingController controller;
-  UserNameInput({
+  PhoneNumberField({
     @required this.controller,
     @required this.labelName,
   });
@@ -14,12 +14,13 @@ class UserNameInput extends StatelessWidget {
     return Container(
       child: TextFormField(
         controller: controller,
-        keyboardType: TextInputType.text,
+        keyboardType: TextInputType.phone,
         decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.phone),
           border: OutlineInputBorder(),
-          hintText: "Your name is ...",
-          labelText: "User Name",
+          prefixText: "+91-",
+          hintText: "",
+          labelText: "Phone Number",
         ),
       ),
     );
