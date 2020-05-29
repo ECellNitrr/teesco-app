@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'widgets/name_field.dart';
 import 'widgets/tagline_field.dart';
 import 'package:image_picker/image_picker.dart';
-class AddOrganisation extends StatefulWidget {
+
+class OrganisationRegistrationScreen extends StatefulWidget {
   @override
-  _AddOrganisationState createState() => _AddOrganisationState();
+  _OrganisationRegistrationScreenState createState() =>
+      _OrganisationRegistrationScreenState();
 }
 
-class _AddOrganisationState extends State<AddOrganisation> {
+class _OrganisationRegistrationScreenState
+    extends State<OrganisationRegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController taglineController = TextEditingController();
@@ -19,26 +22,34 @@ class _AddOrganisationState extends State<AddOrganisation> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("TEESCO",style: TextStyle(color: Colors.black),),
+          title: Text(
+            "ORGANISATION REGISTRATION",
+            style: TextStyle(color: Colors.black),
+          ),
           backgroundColor: Colors.white,
           leading: GestureDetector(
-            child: Icon(Icons.arrow_back_ios,color: Colors.black,),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
             onTap: null,
           ),
           centerTitle: true,
           actions: <Widget>[
-            GestureDetector(
-              child: Icon(Icons.check,color: Colors.black,size: 30,),
-              onTap: null,
-            ),
+            IconButton(
+                icon: Icon(
+                  Icons.check,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                onPressed: null),
             Padding(padding: EdgeInsets.only(right: 20.0))
           ],
         ),
-        body: _buildInitial()
-    );
+        body: _buildInitial());
   }
 
-  Widget _buildInitial(){
+  Widget _buildInitial() {
     return Form(
       key: _formKey,
       child: Padding(
@@ -48,19 +59,23 @@ class _AddOrganisationState extends State<AddOrganisation> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(bottom: 50.0,top: 50.0),
+              padding: EdgeInsets.only(bottom: 50.0, top: 50.0),
               child: GestureDetector(
                 onTap: getImage,
-                child: _image==null?CircleAvatar(
-                  radius: 75,
-                  backgroundColor: Colors.grey,
-                  child: Icon(Icons.file_upload,color: Colors.white,),
-                ):CircleAvatar(
-                  radius: 75,
-                  backgroundImage: FileImage(_image),
-                  backgroundColor: Colors.transparent,
-                )
-                ,
+                child: _image == null
+                    ? CircleAvatar(
+                        radius: 75,
+                        backgroundColor: Colors.grey,
+                        child: Icon(
+                          Icons.file_upload,
+                          color: Colors.white,
+                        ),
+                      )
+                    : CircleAvatar(
+                        radius: 75,
+                        backgroundImage: FileImage(_image),
+                        backgroundColor: Colors.transparent,
+                      ),
               ),
             ),
             Padding(
@@ -84,4 +99,3 @@ class _AddOrganisationState extends State<AddOrganisation> {
     });
   }
 }
-

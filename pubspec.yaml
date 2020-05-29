@@ -30,7 +30,7 @@ dependencies:
   shared_preferences: ^0.5.6+3
   # Common Fonts
   google_fonts: ^0.5.0+1
-  # Upload Image
+  # Picking images from the image library
   image_picker: ^0.6.6+5
 
   cupertino_icons: ^0.1.2
