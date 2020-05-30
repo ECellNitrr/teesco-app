@@ -15,64 +15,62 @@ class UserRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
-          child: DraggableScrollableSheet(builder: (context, scrollController) {
-        return SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          controller: scrollController,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: TextFormField(
-                    controller: userNameController,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.account_circle),
-                      border: OutlineInputBorder(),
-                      hintText: "Your name is ...",
-                      labelText: "User Name",
-                      suffixText: '*',
-                      suffixStyle: TextStyle(color: Colors.red, fontSize: 20),
-                    ),
+        body: Form(
+            child: SafeArea(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: TextFormField(
+                  controller: userNameController,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.account_circle),
+                    border: OutlineInputBorder(),
+                    hintText: "Your name is ...",
+                    labelText: "User Name",
+                    suffixText: '*',
+                    suffixStyle: TextStyle(color: Colors.red, fontSize: 20),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: EmailField(emailController),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: EmailField(emailController),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: InstituteNameInput(
+                  controller: instituteNameController,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: InstituteNameInput(
-                    controller: instituteNameController,
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: PhoneNumberField(controller: phoneNumberController),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: PasswordField(passwordController),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: ComnfirmPasswordField(confirmPasswordController),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: RaisedButton(
+                  onPressed: null,
+                  child: Text('Sign Up'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: PhoneNumberField(controller: phoneNumberController),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: PasswordField(passwordController),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: ComnfirmPasswordField(confirmPasswordController),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: RaisedButton(
-                    onPressed: null,
-                    child: Text('Sign Up'),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        );
-      })),
-    );
+        ),
+      ),
+    )));
   }
 }
