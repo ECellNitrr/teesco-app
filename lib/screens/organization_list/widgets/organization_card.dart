@@ -27,7 +27,7 @@ class OrganizationCard extends StatelessWidget {
                     'orgName',                                    //Pass the name of the organization here
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: 25,
                     ),
                   ),
                   Text(
