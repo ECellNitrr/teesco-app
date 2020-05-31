@@ -25,21 +25,41 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: _children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black26,
-        selectedItemColor: Colors.black,
+          backgroundColor: Colors.black26,
+          selectedItemColor: Colors.black,
           onTap: _onItemTapped,
           currentIndex: _selectedIndex,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.people,color: Colors.grey,), title: Text("Groups")),
+                icon: Icon(
+                  Icons.people,
+                  color: Colors.grey,
+                ),
+                title: Text("Groups")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.chat,color: Colors.grey,), title: Text("Query")),
+                icon: Icon(
+                  Icons.chat,
+                  color: Colors.grey,
+                ),
+                title: Text("Query")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home,color: Colors.grey,), title: Text("Home")),
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.grey,
+                ),
+                title: Text("Home")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.event_available,color: Colors.grey,), title: Text("Tasks")),
+                icon: Icon(
+                  Icons.event_available,
+                  color: Colors.grey,
+                ),
+                title: Text("Tasks")),
             BottomNavigationBarItem(
-                icon: Icon(Icons.flag,color: Colors.grey,), title: Text("LeaderBoard"))
+                icon: Icon(
+                  Icons.flag,
+                  color: Colors.grey,
+                ),
+                title: Text("LeaderBoard"))
           ]),
     );
   }
