@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 ///For Input of Institution
-class InstituteNameInput extends StatelessWidget {
+class InstituteNameField extends StatelessWidget {
   TextEditingController controller;
-  InstituteNameInput({
+  InstituteNameField({
     @required this.controller,
   });
 

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 ///Confirm Password Widget
 class ComnfirmPasswordField extends StatefulWidget {
-  const ComnfirmPasswordField(this.controller);
-  final TextEditingController controller;
+  const ComnfirmPasswordField(this.confirmPController);
+  final TextEditingController confirmPController;
+
   @override
   _ComnfirmPasswordFieldState createState() => _ComnfirmPasswordFieldState();
 }
@@ -20,7 +21,7 @@ class _ComnfirmPasswordFieldState extends State<ComnfirmPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: widget.controller,
+      controller: widget.confirmPController,
       validator: _confirmPassword,
       obscureText: !_passwordVisible,
       decoration: InputDecoration(

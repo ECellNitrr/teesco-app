@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:teesco/screens/login/widgets/password_field.dart';
 import 'package:teesco/screens/user_registration/widgets/email_input.dart';
-import 'package:teesco/screens/user_registration/widgets/institute_name_input.dart';
+import 'package:teesco/screens/user_registration/widgets/institute_name_field.dart';
 import 'package:teesco/screens/user_registration/widgets/phone_number_field.dart';
 import 'package:teesco/screens/user_registration/widgets/confirm_password_field.dart';
 
 class UserRegistration extends StatelessWidget {
-  TextEditingController userNameController;
-  TextEditingController emailController;
-  TextEditingController passwordController;
-  TextEditingController confirmPasswordController;
-  TextEditingController phoneNumberController;
-  TextEditingController instituteNameController;
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
+  final TextEditingController instituteNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Form(
-            child: SafeArea(
-      child: SingleChildScrollView(
+        body: SafeArea(
+      child: Form(
+          child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -44,7 +45,7 @@ class UserRegistration extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
-                child: InstituteNameInput(
+                child: InstituteNameField(
                   controller: instituteNameController,
                 ),
               ),
@@ -70,7 +71,7 @@ class UserRegistration extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    )));
+      )),
+    ));
   }
 }

@@ -6,19 +6,17 @@ class EmailField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TextFormField(
-        controller: controller,
-        keyboardType: TextInputType.emailAddress,
-        validator: _validateEmail,
-        decoration: InputDecoration(
-          suffixText: '*',
-          suffixStyle: TextStyle(color: Colors.red, fontSize: 20),
-          prefixIcon: Icon(Icons.email),
-          border: OutlineInputBorder(),
-          hintText: "example@email.com",
-          labelText: "Email",
-        ),
+    return TextFormField(
+      controller: controller,
+      keyboardType: TextInputType.emailAddress,
+      validator: _validateEmail,
+      decoration: InputDecoration(
+        suffixText: '*',
+        suffixStyle: TextStyle(color: Colors.red, fontSize: 20),
+        prefixIcon: Icon(Icons.email),
+        border: OutlineInputBorder(),
+        hintText: "example@email.com",
+        labelText: "Email",
       ),
     );
   }
