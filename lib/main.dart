@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:teesco/core/util/log_wrapper.dart';
+import 'package:teesco/screens/home/home.dart';
 import 'package:teesco/screens/login/login.dart';
 import 'package:teesco/screens/login/login_repository.dart';
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: "Teesco",
       home: BlocProvider(
         create: (context) => LoginBloc(APILoginRepository()),
-        child: LoginScreen(),
+        child: Home(),
       ),
     );
   }

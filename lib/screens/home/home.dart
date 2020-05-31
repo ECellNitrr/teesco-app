@@ -1,25 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teesco/core/res/strings.dart';
-import 'package:teesco/injection_container.dart';
+import 'package:teesco/screens/home/home_screen.dart';
+import 'package:teesco/screens/leaderboard/leaderboard.dart';
+import 'package:teesco/screens/org_info/org_info.dart';
+import 'package:teesco/screens/query_section/query_section.dart';
+import 'package:teesco/screens/tasks/tasks.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key key}) : super(key: key);
+class Home extends StatefulWidget {
+  Home({Key key}) : super(key: key);
+  @override
+  _HomeState createState() => _HomeState();
+}
 
+class _HomeState extends State<Home> {
+  int _selectedIndex = 2;
+  final List<Widget> _children = [
+    OrganisationInfoScreen(),
+    QuerySectionScreen(),
+    HomeScreen(),
+    LeaderBoardScreen(),
+    TasksScreen()
+  ];
   @override
   Widget build(BuildContext context) {
-    SharedPreferences sharedPreferences = sl.get<SharedPreferences>();
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          "User Token from Shared Preferences:\n${sharedPreferences.getString(S.tokenKey)}",
-          textAlign: TextAlign.center,
-        ),
-      ),
+      body: _children[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black26,
+        selectedItemColor: Colors.black,
+          onTap: _onItemTapped,
+          currentIndex: _selectedIndex,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.people,color: Colors.grey,), title: Text("Groups")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.chat,color: Colors.grey,), title: Text("Query")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home,color: Colors.grey,), title: Text("Home")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.event_available,color: Colors.grey,), title: Text("Tasks")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.flag,color: Colors.grey,), title: Text("LeaderBoard"))
+          ]),
     );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }
