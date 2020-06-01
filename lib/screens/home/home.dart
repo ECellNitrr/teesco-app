@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/screens/home/home_screen.dart';
 import 'package:teesco/screens/leaderboard/leaderboard.dart';
 import 'package:teesco/screens/org_info/org_info.dart';
+import 'package:teesco/screens/organisation_list/organisation_list.dart';
 import 'package:teesco/screens/query_section/query_section.dart';
 import 'package:teesco/screens/tasks/tasks.dart';
 
@@ -12,11 +12,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
   final List<Widget> _children = [
     OrganisationInfoScreen(),
     QuerySectionScreen(),
-    HomeScreen(),
+    null,
     LeaderBoardScreen(),
     TasksScreen()
   ];
@@ -66,6 +66,9 @@ class _HomeState extends State<Home> {
 
   void _onItemTapped(int index) {
     setState(() {
+      if (index == 2)
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => OrganisationListScreen()));
       _selectedIndex = index;
     });
   }
