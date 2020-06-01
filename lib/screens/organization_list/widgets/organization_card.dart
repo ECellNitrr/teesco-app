@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OrganizationCard extends StatelessWidget {
+  final String name, position;
+  OrganizationCard(this.name,this.position);
   @override
   Widget build(BuildContext context) {
     return Card(                                      //Each card corresponds to a single organization
@@ -24,14 +26,14 @@ class OrganizationCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Text(
-                    'orgName',                                    //Pass the name of the organization here
+                    name,                                    //Pass the name of the organization here
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                     ),
                   ),
                   Text(
-                    'position',                                       //Pass the position of the person here
+                      position,                                       //Pass the position of the person here
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.grey[600],
