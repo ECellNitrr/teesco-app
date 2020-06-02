@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import './widgets/checkbox_list_tile.dart';
 
 class CreateGroupScreen extends StatelessWidget {
-  final String name, role;
 
-  CreateGroupScreen(this.name, this.role);
+
+
 
   @override
   Widget build(BuildContext context) {
