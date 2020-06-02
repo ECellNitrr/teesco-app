@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
           if (state is LoginLoaded) {
             Log.i(tag: "Login", message: "User Logged In ${state.token}");
             await sharedPreferences.setString(S.tokenKey, state.token);
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
           } else if (state is LoginError) {
             Scaffold.of(context).showSnackBar(SnackBar(content: Text(state.message)));
           }
