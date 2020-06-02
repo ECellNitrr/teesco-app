@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teesco/screens/leaderboard/leaderboard.dart';
 import 'package:teesco/screens/org_info/org_info.dart';
-import 'package:teesco/screens/organisation_list/organisation_list.dart';
+import 'package:teesco/screens/organization_list/organization_list_screen.dart';
 import 'package:teesco/screens/query_section/query_section.dart';
 import 'package:teesco/screens/tasks/tasks.dart';
 
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
     setState(() {
       if (index == 2)
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => OrganisationListScreen()));
+            MaterialPageRoute(builder: (context) => OrganizationListScreen()));
       _selectedIndex = index;
     });
   }
