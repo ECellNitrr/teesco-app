@@ -1,0 +1,31 @@
+class dummyData{
+  List dummy=[
+    {"name":"ASD",
+    "score":"200",
+    "image":null},
+    {"name":"dad",
+    "score":"145", 
+    "image":null},
+    {"name":"asca",
+    "score":"123", 
+    "image":null},
+    {"name":"cac",
+    "score":"111" , 
+    "image":null},
+    {"name":"cac",
+    "score":"100" , 
+    "image":null},
+    {"name":"ac",
+    "score":"98" , 
+    "image":null},
+    {"name":"acad",
+    "score":"87" , 
+    "image":null},
+    {"name":"dcd",
+    "score":"76" , 
+    "image":null},
+    {"name":"aca",
+    "score":"65" , 
+    "image":null}
+  ];
+}
