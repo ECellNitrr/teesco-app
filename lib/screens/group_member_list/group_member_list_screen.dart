@@ -48,6 +48,10 @@ class GroupMemberList extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: Icon(
+        Icons.add_circle,
+        size: 70,
+      ),
     );
   }
 }
