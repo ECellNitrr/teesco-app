@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GroupListCard extends StatelessWidget {
+class GroupListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teesco/screens/group_list/widgets/group_list_card.dart';
+import 'package:teesco/screens/group_list/widgets/group_list_tile.dart';
 
 class GroupList extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _GroupListState extends State<GroupList> {
         child: ListView.builder(
           itemCount: 8,
           itemBuilder: (context, index) {
-            return GroupListCard();
+            return GroupListTile();
           },
         ),
       ),
