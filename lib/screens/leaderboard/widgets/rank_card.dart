@@ -84,7 +84,7 @@ Widget _buidBadge(int index) {
         ),
         child: Icon(
           Icons.stars,
-          color: Color(0xAACD7F32),
+          color: Color(0xAAaaa9ad),
           size: 30,
         ),
       ),
@@ -102,7 +102,7 @@ Widget _buidBadge(int index) {
         ),
         child: Icon(
           Icons.stars,
-          color: Color(0xAAaaa9ad),
+          color: Color(0xAACD7F32),
           size: 30,
         ),
       ),
