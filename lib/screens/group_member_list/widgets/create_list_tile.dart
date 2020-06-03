@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 ///This class returns a list tile which would hold the name and details of member
 ///It receives a string as parameter which is the name of the person
 
