@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import './widgets/create_list_tile.dart';
 
 ///This is the screen which would list all the members of the group
-///It receives a string as parameter which would be the category of the members being shown
+///It receives a string as parameter which would be the category of the members being shown (here header)
 class GroupMemberList extends StatelessWidget {
   final String header;
 
