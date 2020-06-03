@@ -64,7 +64,11 @@ Widget _buidBadge(int index) {
           color: Colors.white,
           shape: BoxShape.circle,
         ),
-        child: Icon(Icons.stars,color: Color(0xAAFFDF00),size: 30,),
+        child: Icon(
+          Icons.stars,
+          color: Color(0xAAFFDF00),
+          size: 30,
+        ),
       ),
     );
   } else if (index == 1) {
@@ -78,7 +82,11 @@ Widget _buidBadge(int index) {
           color: Colors.white,
           shape: BoxShape.circle,
         ),
-        child: Icon(Icons.stars,color: Color(0xAACD7F32),size: 30,),
+        child: Icon(
+          Icons.stars,
+          color: Color(0xAACD7F32),
+          size: 30,
+        ),
       ),
     );
   } else if (index == 2) {
@@ -92,7 +100,11 @@ Widget _buidBadge(int index) {
           color: Colors.white,
           shape: BoxShape.circle,
         ),
-        child: Icon(Icons.stars,color: Color(0xAAaaa9ad),size: 30,),
+        child: Icon(
+          Icons.stars,
+          color: Color(0xAAaaa9ad),
+          size: 30,
+        ),
       ),
     );
   } else {
@@ -102,7 +114,6 @@ Widget _buidBadge(int index) {
       child: Container(
         height: 20,
         width: 20,
-       
       ),
     );
   }

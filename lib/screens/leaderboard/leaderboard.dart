@@ -48,7 +48,8 @@ class LeaderBoardScreen extends StatelessWidget {
         itemCount: _data.length,
         padding: EdgeInsets.all(8),
         itemBuilder: (context, index) {
-          return rankCard(_data[index]['name'], _data[index]['score'],_data[index]['image'],index);
+          return rankCard(_data[index]['name'], _data[index]['score'],
+              _data[index]['image'], index);
         });
   }
 }
