@@ -28,6 +28,7 @@ dependencies:
   google_fonts: ^0.5.0+1
   # Picking images from the image library
   image_picker: ^0.6.6+5
+  transparent_image: ^1.0.0
 
   cupertino_icons: ^0.1.2
 
