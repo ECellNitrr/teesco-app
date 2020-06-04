@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 
 ///This class returns a Custom Checkbox Tile which can be checked and unchecked
 ///IT receives a string as parameter in order to give the title of the checkbox
-class CustomListTile extends StatefulWidget {
+class PermissionChoiceTile extends StatefulWidget {
   final String title;
 
-  CustomListTile(this.title);
+  PermissionChoiceTile(this.title);
 
   @override
-  _CustomListTileState createState() => _CustomListTileState(title);
+  _PermissionChoiceTileState createState() => _PermissionChoiceTileState(title);
 }
 
-class _CustomListTileState extends State<CustomListTile> {
+class _PermissionChoiceTileState extends State<PermissionChoiceTile> {
   final String s;
   bool b1 = false;
 
-  _CustomListTileState(this.s);
+  _PermissionChoiceTileState(this.s);
 
   @override
   Widget build(BuildContext context) {

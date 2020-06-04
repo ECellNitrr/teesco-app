@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import './widgets/checkbox_list_tile.dart';
 
-class CreateGroupScreen extends StatelessWidget {
+class CreateGroupScreen extends StatefulWidget {
+  final String name, role;
 
+  CreateGroupScreen({@required this.name, @required this.role});
 
+  @override
+  _CreateGroupScreenState createState() => _CreateGroupScreenState();
+}
 
-
+class _CreateGroupScreenState extends State<CreateGroupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,14 +76,14 @@ class CreateGroupScreen extends StatelessWidget {
                 ),
               ),
             ),
-            CustomListTile("is admin"),
-            CustomListTile("is staff"),
-            CustomListTile("can create tasks"),
-            CustomListTile("is create groups"),
-            CustomListTile("is send invites for staff"),
-            CustomListTile("is reply yo queries"),
-            CustomListTile("is access leader-board settings"),
-            CustomListTile("can approve/reject proofs"),
+            PermissionChoiceTile("is admin"),
+            PermissionChoiceTile("is staff"),
+            PermissionChoiceTile("can create tasks"),
+            PermissionChoiceTile("is create groups"),
+            PermissionChoiceTile("is send invites for staff"),
+            PermissionChoiceTile("is reply yo queries"),
+            PermissionChoiceTile("is access leader-board settings"),
+            PermissionChoiceTile("can approve/reject proofs"),
           ],
         ),
       ),
