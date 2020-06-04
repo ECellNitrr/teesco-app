@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 ///This class returns a list tile which would hold the name and details of member
 ///It receives a 'title' as a required named argument which is the name of the member and url of profile image as a named argument
 
 class GroupMemberTile extends StatelessWidget {
   final String title, profilePicUrl;
+  final int memberId;
 
-  GroupMemberTile({@required this.title, this.profilePicUrl});
+  GroupMemberTile({@required this.title, this.profilePicUrl, this.memberId});
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +30,9 @@ class GroupMemberTile extends StatelessWidget {
         size: 45,
       );
     } else {
-      return FadeInImage.memoryNetwork(
-        placeholder: kTransparentImage,
-        image: profilePicUrl,
+      return FadeInImage(
+        placeholder: AssetImage('assets/account_circle.png'),
+        image: NetworkImage(profilePicUrl),
       );
     }
   }
