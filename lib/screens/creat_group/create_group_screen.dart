@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import './widgets/checkbox_list_tile.dart';
+import 'package:teesco/screens/creat_group/widgets/permission_choice_tile.dart';
 
 class CreateGroupScreen extends StatefulWidget {
-  final String name, role;
-
-  CreateGroupScreen({@required this.name, @required this.role});
-
   @override
   _CreateGroupScreenState createState() => _CreateGroupScreenState();
 }
