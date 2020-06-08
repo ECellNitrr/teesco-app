@@ -17,8 +17,8 @@ class _HomeState extends State<Home> {
     OrganisationInfoScreen(),
     QuerySectionScreen(),
     null,
-    LeaderBoardScreen(),
-    TasksScreen()
+    TasksScreen(),
+    LeaderBoardScreen()
   ];
   @override
   Widget build(BuildContext context) {
