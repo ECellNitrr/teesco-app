@@ -7,12 +7,12 @@ import 'package:teesco/screens/edit_org_info/widgets/edit_photos.dart';
 import 'package:teesco/screens/edit_org_info/widgets/profile_image.dart';
 import 'package:teesco/screens/edit_org_info/widgets/profile_wall.dart';
 
-class EditOrganisation extends StatefulWidget {
+class EditOrganisationScreen extends StatefulWidget {
   @override
-  _EditOrganisationState createState() => _EditOrganisationState();
+  _EditOrganisationScreenState createState() => _EditOrganisationScreenState();
 }
 
-class _EditOrganisationState extends State<EditOrganisation> {
+class _EditOrganisationScreenState extends State<EditOrganisationScreen> {
   File _profileImage, _wallImage;
 
   final picker = ImagePicker();
