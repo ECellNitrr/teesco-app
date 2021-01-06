@@ -10,8 +10,9 @@ class S {
   //! Add common strings here...
 
   // urls
-  static const String url = "http://159.65.158.103:5555/api/";
-  static const String loginUrl = url + "users/login/";
+  static const String baseUrl = "http://159.65.158.103:5555/api/";
+  static const String loginUrl = baseUrl + "users/login/";
+  static const String registerUrl = baseUrl + "users/register/";
 
   // api keys
   static const String tokenKey = "token";
@@ -22,4 +23,8 @@ class S {
   static const String institutionKey = "institution";
   static const String countryCodeKey = "country_code";
   static const String phoneKey = "phone";
+
+  // error strings
+  static const String networkError = "Couldn't register. Is the device online?";
+  static const String unknownError = "Something went wrong. Please try again later.";
 }

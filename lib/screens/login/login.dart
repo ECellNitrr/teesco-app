@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:teesco/core/res/strings.dart';
+import 'package:teesco/core/util/log_wrapper.dart';
 import 'package:teesco/injection_container.dart';
 import 'package:teesco/screens/home/home.dart';
+import 'package:teesco/screens/login/cubit/login_cubit.dart';
 
-import '../../core/util/log_wrapper.dart';
-import 'bloc/login_bloc.dart';
 import 'widgets/email_field.dart';
-import 'widgets/login_button.dart';
 import 'widgets/password_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -20,35 +19,33 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SharedPreferences sharedPreferences = sl.get<SharedPreferences>();
     return Scaffold(
-      body: BlocListener<LoginBloc, LoginState>(
+      body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) async {
-          if (state is LoginLoaded) {
+          if (state is LoginSuccess) {
             Log.i(tag: "Login", message: "User Logged In ${state.token}");
             await sharedPreferences.setString(S.tokenKey, state.token);
+            await Future.delayed(Duration(seconds: 1));
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
           } else if (state is LoginError) {
             Scaffold.of(context).showSnackBar(SnackBar(content: Text(state.message)));
           }
         },
-        child: BlocBuilder<LoginBloc, LoginState>(
-          builder: (context, state) {
-            if (state is LoginInitial) {
-              return _buildInitial();
-            } else if (state is LoginLoading) {
-              return _buildLoading();
-            } else if (state is LoginLoaded) {
-              return _buildSuccess(state.token);
-            } else if (state is LoginError) {
-              return _buildInitial();
-            } else
-              return _buildInitial();
-          },
-        ),
+        builder: (context, state) {
+          if (state is LoginInitial) {
+            return _buildInitial(context);
+          } else if (state is LoginLoading) {
+            return _buildLoading();
+          } else if (state is LoginSuccess) {
+            return _buildSuccess(state.token);
+          } else {
+            return _buildInitial(context);
+          }
+        },
       ),
     );
   }
 
-  Widget _buildInitial() {
+  Widget _buildInitial(BuildContext context) {
     return Form(
       key: _formKey,
       child: Padding(
@@ -67,10 +64,9 @@ class LoginScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 20.0),
-              child: LoginButton(
-                formKey: _formKey,
-                email: emailController.text,
-                password: passwordController.text,
+              child: RaisedButton(
+                onPressed: () => _login(context),
+                child: Text("Login"),
               ),
             ),
           ],
@@ -98,5 +94,11 @@ class LoginScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _login(BuildContext context) {
+    final cubit = context.read<LoginCubit>();
+    if (_formKey.currentState.validate())
+      cubit.login(emailController.text, passwordController.text);
   }
 }
