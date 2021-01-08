@@ -3,10 +3,11 @@ class NetworkError extends Error {}
 
 class UnknownError extends Error {}
 
-// Login Specific Errors
-class InvalidCredentialsError extends Error {}
+class ResponseException implements Exception {
+  final String message;
 
-class UserNotFoundError extends Error {}
+  ResponseException(this.message);
+}
 
 class ValidationError extends Error {
   final String description;

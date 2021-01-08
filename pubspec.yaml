@@ -17,9 +17,10 @@ dependencies:
   # Service Locator (DI)
   get_it: ^4.0.1
   # BLoC (Business Logic Component) for Flutter State Management
-  flutter_bloc: ^4.0.0
+  bloc: ^6.1.0
+  flutter_bloc: ^6.1.0
   # Equating two dart objects
-  equatable: ^1.1.1
+  equatable: ^1.2.5
   # Socket based data connection checker {beta}
   data_connection_checker: ^0.3.4
   # Local Cache Management
